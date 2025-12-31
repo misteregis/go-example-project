@@ -1,0 +1,158 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-12-30T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_health",
+      "parentId": "fld_go_example_api",
+      "modified": 1703894400000,
+      "created": 1703894400000,
+      "url": "{{ _.base_url }}/api/v1/health",
+      "name": "Health Check",
+      "description": "Health check endpoint",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1703894400000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_list_users",
+      "parentId": "fld_go_example_api",
+      "modified": 1703894400000,
+      "created": 1703894400000,
+      "url": "{{ _.base_url }}/api/v1/users",
+      "name": "Lista todos os usuários",
+      "description": "Retorna a lista de todos os usuários",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1703894300000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_user",
+      "parentId": "fld_go_example_api",
+      "modified": 1703894400000,
+      "created": 1703894400000,
+      "url": "{{ _.base_url }}/api/v1/users/1",
+      "name": "Obtém um usuário específico",
+      "description": "Retorna os detalhes de um usuário por ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1703894200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_user",
+      "parentId": "fld_go_example_api",
+      "modified": 1703894400000,
+      "created": 1703894400000,
+      "url": "{{ _.base_url }}/api/v1/users",
+      "name": "Cria um novo usuário",
+      "description": "Cria um novo usuário no sistema",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"João Silva\",\n  \"email\": \"joao@example.com\",\n  \"age\": 30\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1703894100000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_go_example_api",
+      "parentId": "wrk_go_example",
+      "modified": 1703894400000,
+      "created": 1703894400000,
+      "name": "Go Example API",
+      "description": "API endpoints do projeto Go Example",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1703894400000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_go_example",
+      "parentId": null,
+      "modified": 1703894400000,
+      "created": 1703894400000,
+      "name": "Go Example Project",
+      "description": "Coleção de requisições para o projeto Go Example",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_base",
+      "parentId": "wrk_go_example",
+      "modified": 1703894400000,
+      "created": 1703894400000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8080"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1703894400000,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_cookies",
+      "parentId": "wrk_go_example",
+      "modified": 1703894400000,
+      "created": 1703894400000,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  // Configurações do Go
+  "go.useLanguageServer": true,
+  "go.lintTool": "golangci-lint",
+  "go.lintOnSave": "workspace",
+  "go.formatTool": "goimports",
+  "go.toolsManagement.autoUpdate": true,
+
+  // Formatar ao salvar
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports":  "explicit"
+    },
+		"editor.defaultFormatter": "golang.go",
+  },
+
+  // Análise de código
+  "go.vetOnSave": "workspace",
+  "go.buildOnSave": "workspace",
+  "go.coverOnSave": false,
+
+  // Testes
+  "go.testFlags": ["-v", "-race"],
+  "go.testTimeout": "30s",
+
+  // Navegação
+  "go.gotoSymbol.includeImports": true,
+  "go.gotoSymbol.includeGoroot": false,
+
+  // IntelliSense
+  "go.autocompleteUnimportedPackages": true,
+  "go.useCodeSnippetsOnFunctionSuggest": true,
+  "go.useCodeSnippetsOnFunctionSuggestWithoutType": true,
+
+  // Editor geral
+  "editor.rulers": [80, 120],
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "yaml.schemas": {
+    "https://golangci-lint.run/jsonschema/golangci.v1.jsonschema.json": "file:///d%3A/Docker/home/apps/extra/golang/example/.golangci.yml"
+  }
+}
