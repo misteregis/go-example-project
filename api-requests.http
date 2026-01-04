@@ -1,0 +1,31 @@
+@baseUrl = http://localhost:8080
+@contentType = application/json; charset=utf-8
+
+### Health Check
+GET {{baseUrl}}/api/v1/health
+
+### Lista todos os usuários
+GET {{baseUrl}}/api/v1/users
+
+### Obtém um usuário específico
+GET {{baseUrl}}/api/v1/users/1
+
+### Cria um novo usuário
+POST {{baseUrl}}/api/v1/users
+Content-Type: {{contentType}}
+
+{
+  "name": "Carlos Augusto",
+  "email": "carlos@example.com",
+  "age": 30
+}
+
+### Cria outro usuário
+POST {{baseUrl}}/api/v1/users
+Content-Type: {{contentType}}
+
+{
+  "name": "Ana Costa",
+  "email": "ana@example.com",
+  "age": 28
+}
