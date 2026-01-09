@@ -11,8 +11,26 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
+	httpSwagger "github.com/swaggo/http-swagger"
+
+	_ "github.com/misteregis/go-example-project/docs"
 )
 
+// @title API de Exemplo em Go
+// @version 1.0
+// @description API RESTful de exemplo com documentação Swagger automática
+// @termsOfService http://swagger.io/terms/
+
+// @contact.name Suporte API
+// @contact.email support@example.com
+
+// @license.name MIT
+// @license.url https://opensource.org/licenses/MIT
+
+// @host localhost:8080
+// @BasePath /api/v1
+
+// @schemes http https
 func main() {
 	// Carregar variáveis de ambiente
 	if err := godotenv.Load(); err != nil {
@@ -21,6 +39,14 @@ func main() {
 
 	// Configurar roteador
 	r := mux.NewRouter()
+
+	// Redirecionamento da raiz para o Swagger
+	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		http.Redirect(w, r, "/swagger/index.html", http.StatusMovedPermanently)
+	}).Methods("GET")
+
+	// Documentação Swagger
+	r.PathPrefix("/swagger/").Handler(httpSwagger.WrapHandler)
 
 	// Rotas da API
 	api := r.PathPrefix("/api/v1").Subrouter()
@@ -50,6 +76,14 @@ func main() {
 	}
 }
 
+// healthCheck godoc
+// @Summary Verificar saúde da API
+// @Description Retorna o status de saúde do servidor
+// @Tags Health
+// @Accept json
+// @Produce json
+// @Success 200 {object} map[string]string
+// @Router /health [get]
 func healthCheck(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	if err := json.NewEncoder(w).Encode(map[string]string{

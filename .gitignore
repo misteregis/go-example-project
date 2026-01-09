@@ -48,3 +48,6 @@ temp/
 # Build artifacts
 dist/
 build/
+
+# Documentação Swagger (opcional - remova se quiser versionar)
+# docs/

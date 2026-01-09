@@ -1,8 +1,9 @@
-.PHONY: help run build test lint clean install-tools deps tidy fmt test-coverage docker-build
+.PHONY: help run build test lint clean install-tools deps tidy fmt test-coverage docker-build swagger
 
 help:  ## Mostra esta mensagem de ajuda
 	@echo Comandos disponiveis:
 	@echo   make install-tools - Instala ferramentas de desenvolvimento
+	@echo   make swagger       - Gerar documentacao Swagger
 	@echo   make run           - Executa a aplicacao
 	@echo   make build         - Compila a aplicacao
 	@echo   make test          - Executa os testes
@@ -16,6 +17,10 @@ help:  ## Mostra esta mensagem de ajuda
 install-tools: ## Instala ferramentas de desenvolvimento
 	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 	go install golang.org/x/tools/cmd/goimports@latest
+	go install github.com/swaggo/swag/cmd/swag@latest
+
+swagger: ## Gera documentacao Swagger
+	swag init -g cmd/api/main.go -o docs
 
 run: ## Executa a aplicacao
 	go run cmd/api/main.go

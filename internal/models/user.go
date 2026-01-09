@@ -4,12 +4,12 @@ import "time"
 
 // User representa um usuário do sistema
 type User struct {
-	ID        int       `json:"id"`
-	Name      string    `json:"name"`
-	Email     string    `json:"email"`
-	Age       int       `json:"age"`
-	CreatedAt time.Time `json:"created_at"`
-	UpdatedAt time.Time `json:"updated_at"`
+	ID        int       `json:"id" example:"1"`
+	Name      string    `json:"name" example:"João Silva"`
+	Email     string    `json:"email" example:"joao@example.com"`
+	Age       int       `json:"age" example:"30"`
+	CreatedAt time.Time `json:"created_at" example:"2026-01-09T10:00:00Z"`
+	UpdatedAt time.Time `json:"updated_at" example:"2026-01-09T10:00:00Z"`
 }
 
 // Validate valida os dados do usuário

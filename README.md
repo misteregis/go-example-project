@@ -66,6 +66,24 @@ Ao abrir o projeto, o VSCode sugerirá a instalação das extensões recomendada
 
 ## 📝 Endpoints da API
 
+### Documentação Swagger
+
+A API possui documentação interativa Swagger disponível em:
+- **Acesse:** `http://localhost:8080/` (redireciona automaticamente para o Swagger)
+- **Ou diretamente:** `http://localhost:8080/swagger/index.html`
+
+### Regenerar Documentação
+
+Sempre que adicionar novas rotas ou modificar as anotações, execute:
+
+```bash
+swag init -g cmd/api/main.go -o docs
+```
+
+### Endpoints Disponíveis
+
+- `GET /` - Redireciona para /swagger/index.html
+- `GET /swagger/` - Documentação Swagger UI
 - `GET /api/v1/health` - Health check
 - `GET /api/v1/users` - Lista todos os usuários
 - `GET /api/v1/users/{id}` - Obtém um usuário específico
@@ -93,7 +111,7 @@ make build
 
 ## 🎨 Linting e Formatação
 
-O projeto usa **golangci-lint** para análise estática de código: 
+O projeto usa **golangci-lint** para análise estática de código:
 
 ```bash
 # Executar o linter
